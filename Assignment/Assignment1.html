@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        #parent{
+            background-color: black;
+            height: 50vh;
+            width: 50vw;
+        }
+        #child1{
+            background-color: aqua;
+            height: 10vh;
+            width: 40vw;
+            margin: 0px 40px 40px 40px;
+        }
+        #child2{
+            background-color: red;
+            height: 10vh;
+            width: 40vw;
+            margin: 40px;
+        }
+        #child3{
+            background-color: blueviolet;
+            height: 10vh;
+            width: 40vw;
+            margin: 40px;
+        }
+    </style>
+    <script>
+        function funcalertparent(){
+            alert('This is parent div');
+        };
+        function funcalertchild1(event){
+            alert('This is child1 div');
+            event.stopImmediatePropagation();       //Stops parent as well as other function.
+        };
+        function anotherfunctionchild1(){
+            alert('This is another function for child1');
+        };
+
+
+
+
+        function funcalertchild2(event){
+            alert('This is child2 div');
+            event.stopPropagation();                //Stops only parent.
+        };
+        function anotherfunctionchild2(){
+            alert('This is another function for child2');
+        };
+
+
+
+
+        function funcalertchild3(event){
+            alert('This is child3 div');
+            event.preventDefault();
+        };
+
+        window.addEventListener("load",function(){
+            document.getElementById("parent").addEventListener("click",funcalertparent);
+            document.getElementById("child1").addEventListener("click",funcalertchild1);
+            document.getElementById("child1").addEventListener("click",anotherfunctionchild1);      
+
+
+            document.getElementById("child2").addEventListener("click",funcalertchild2);
+            document.getElementById("child2").addEventListener("click",anotherfunctionchild2);
+            document.getElementById("child3").addEventListener("click",funcalertchild3);
+        });
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <div id="child1">
+
+        </div>
+        <div id="child2">
+
+        </div>
+        <div id="child3">
+            <a href="https://google.com">Google</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<script>
+    window.addEventListener("load",function(){
+        var list = [ 'first', 'second'];
+        //Create a list with for loop to show the print the array value.
+        for( var i in list) {   //i=1
+            console.log(i);
+        var lin = document.createElement('li');
+        console.log(lin)
+        var textNode = document.createTextNode(list[i]);   //first  second
+        var btn = document.createElement('button');
+        btn.innerHTML = "index";
+        console.log(i);
+        // debugger
+        btn.onclick = function(i) {
+				alert('index is'+i);
+			}.bind(null, i);
+        lin.appendChild(textNode);
+        lin.appendChild(btn);
+        document.getElementById("root").appendChild(lin);
+        }
+    });
+</script>
+<body>
+    <header>
+        <ul>
+            <li id="root"></li>
+        </ul>
+    </header>
+</body>
+</html>
