@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("inputbutton").addEventListener("click", function (event) {
+                let inputValue = document.getElementById("inputtask").value;
+                document.getElementById("inputtask").value = "";
+                if (event.target.value == "ADD" && inputValue!="") {
+                    let container = document.createElement("div");
+
+                    let left = document.createElement("div");
+                    let input = document.createElement("input");
+                    input.setAttribute("type","text");
+                    input.setAttribute("readonly","readonly")
+                    input.setAttribute("value",inputValue);
+                    left.appendChild(input);
+                    
+                    let right = document.createElement("div");
+                    let btn_edit = document.createElement("button");
+                    btn_edit.innerText = "Edit"
+                    let btn_delete = document.createElement("button");
+                    btn_delete.innerText = "Delete";
+                    right.appendChild(btn_edit);
+                    right.appendChild(btn_delete);
+
+                    container.appendChild(left);
+                    container.appendChild(right);
+                    let task = document.getElementsByClassName("task")[0];
+                    task.appendChild(container);
+
+                    btn_edit.addEventListener("click",function(){
+                    if(btn_edit.innerText.toLowerCase() == "edit"){
+                        input.removeAttribute("readonly");
+                        btn_edit.innerText = "Save";
+                    }
+                    else{
+                        input.setAttribute("readonly","readonly");
+                        btn_edit.innerText = "Edit";
+                    }
+
+                    btn_delete.addEventListener("click",function(){
+                        task.removeChild(container);
+                    });
+                });
+                }
+                else{
+                    alert("Please Enter Task To Do");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" name="todo" id="inputtask">
+    <input type="submit" value="ADD" id="inputbutton">
+    <h2>Tasks to do &#8595</h2>
+    <div class="task">
+        <!-- <div class="container">
+            <div class="left">
+                <input type="text">
+            </div>
+            <div class="right">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div> -->
+    </div>
+
+    </body>
+
+</html>
