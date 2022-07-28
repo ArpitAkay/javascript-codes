@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<script>
+    function sum(a,b){
+        return a+b;
+    };
+    var c=sum(4,5);
+
+    var add = sum.bind(null,40);
+    d = add(10);
+
+    window.addEventListener("load",function(event){
+        document.getElementById("para").innerHTML = "The sum of 2 numbers is " + c + " and the addition of 2 numbers is " + d;
+    })
+</script>
+<body>
+    <p id="para"></p>
+</body>
+</html>

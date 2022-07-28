@@ -1,7 +1,7 @@
 let form = document.getElementById("new-form");
-let ls = localStorage.getItem("todo");
+let ls = localStorage.getItem("todo");      //todo is the name of local storage and ls is storing the whole data in the form of string.
 console.log(ls)
-let todo = ls ? JSON.parse(ls) :[];
+let todo = ls ? JSON.parse(ls) :[];     //parse converts the string into JavaScript object i.e data becomes a JavaScript object. Here the object is todo.
 
 form.addEventListener("submit",function(event){
     event.preventDefault();
@@ -11,10 +11,10 @@ form.addEventListener("submit",function(event){
         return alert("Please enter the task");
     };
     todo.push(inputValue);
-    localStorage.setItem("todo",JSON.stringify(todo));
+    localStorage.setItem("todo",JSON.stringify(todo));      //Stringify converts object/Array etc into string.
     location.reload();
 });
-todo.map((data,index) =>{
+todo.map((data,index) =>{       //.map is pure array m iterate krenge.
     document.getElementById("tasks").innerHTML += `
     <div class="container">
         <div class="left">
@@ -35,7 +35,7 @@ function complete(e){
     let text = document.getElementById("text"+e);
     console.log(text);
     if(checkBox.checked == true){
-        text.style.textDecoration = "line-through";
+        text.style.textDecoration = "line-through";         //cut text.
         text.style.color = "red";
     }
     else{

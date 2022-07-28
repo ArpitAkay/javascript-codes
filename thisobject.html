@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <h1>Hello </h1>
+</body>
+<script>
+    function WhoIsUser() {
+        'use strict';               //it is a mode where you can't access 'this' pointer.
+        console.log("Simple user login")
+        console.log(this === window);
+    }
+
+    let user = {                    // let obj = new Object();
+        count: 10,
+        WhoIsUser: WhoIsUser(),
+        WhoIsUser1: function () {
+            console.log(this === window);
+        }
+    }
+    user.WhoIsUser1();
+</script>
+
+</html>

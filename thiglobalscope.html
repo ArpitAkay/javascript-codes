@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<script>
+    window.addEventListener("load", function () {
+        var myVar = 100;
+        function SomeFunction() {
+            function WhoIsThis() {
+                var myVar = 200;
+
+                alert("myVar = " + myVar); // 200
+                alert("this.myVar = " + this.myVar); // 100
+            }
+
+            WhoIsThis();
+        }
+
+        SomeFunction();
+    });
+</script>
+
+<body>
+
+</body>
+
+</html>

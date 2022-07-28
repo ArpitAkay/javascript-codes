@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Pretend this a is coming from a server as a response.
+    var a = "Arpit bhai";
+    // a = undefined;
+    if(a!=undefined){
+        throw new Error("This is not undefined");         //or  throw("This is not undefined");
+        console.log("Hello World!");        //this will not execute.
+    }
+    else{
+        console.log("This is undefined");
+    }
+
+    try {
+        console.log("We are inside try block");
+        harry();
+    } catch (error) {
+        console.log("Are You Okay");
+        console.log(error);
+        // console.log(error.name);
+        console.log(error.message);
+    } finally{
+        console.log("Finally we will run this.");
+    }
+</script>
+</html>

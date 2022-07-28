@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var myVar = 100;
+
+    function WhoIsUser() {
+
+        alert(this.myVar);
+    }
+
+    var obj1 = {
+        myVar: 200,
+        whoIsThis: WhoIsThis
+    };
+
+    var obj2 = {
+        myVar: 300,
+        whoIsThis: WhoIsThis
+    };
+
+    WhoIsUser(); // 'this' will point to window object
+
+    WhoIsUser.call(obj1); // 'this' will point to obj1
+
+    WhoIsUser.apply(obj2); // 'this' will point to obj2
+
+    obj1.WhoIsUser.call(window); // 'this' will point to window object
+
+    WhoIsUser.apply(obj2); // 'this' will point to obj2
+</script>
+
+</html>

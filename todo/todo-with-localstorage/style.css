@@ -14,6 +14,7 @@ h1{
     padding: 10px;
     border-radius: 20px;
     width: 50vw;
+    font-size: 20px;
 }
 #new-form-submit{
     background-color: blue;
@@ -43,6 +44,7 @@ h2{
     appearance: none;
     outline: none;
     border: none;
+    font-size: 20px;
 }
 .right{
     padding-top: 10px;

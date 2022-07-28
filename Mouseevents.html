@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        window.addEventListener("load",function(){
+            document.getElementById("btn").addEventListener("click",function(event){
+                console.log(event);
+            });
+            document.getElementById("anchor").addEventListener("click",function(){
+                console.log("test");
+                event.preventDefault();
+            });
+            document.getElementById("checkcm").addEventListener("contextmenu",function(){
+                alert('you checked context menu');
+            });
+            document.getElementById("checkmover").addEventListener("mouseover",function(){
+                alert('you checked mouse over');
+            });
+            document.getElementById("checkmout").addEventListener("mouseout",function(){
+                alert('you checked mouse out');
+            });
+            document.getElementById("checkmdown").addEventListener("mousedown",function(){
+                alert('you checked mouse down');
+            });
+            document.getElementById("checkmup").addEventListener("mouseup",function(){
+                alert('you checked mouse up');
+            });
+            document.getElementById("checkmm").addEventListener("mousemove",function(){
+                alert('you checked mouse move');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">Submit</button>
+    <a href="https://google.com" id="anchor">Google</a>
+    <button id="checkcm">Context Menu</button>
+    <button id="checkmover">Mouse Over</button>
+    <button id="checkmout">Mouse Out</button>
+    <button id="checkmdown">Mouse Down</button>
+    <button id="checkmup">Mouse Up</button>
+    <button id="checkmm">Mouse Move</button>
+    <br>
+    <input  id="checkkdown" type="text">KeyDown
+    <br>
+    <input  id="checkkup" type="text">Keyup
+</body>
+</html>

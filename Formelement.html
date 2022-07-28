@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("formsubmit").addEventListener("submit", function () {
+                alert('You have successfully submitted the form');
+                console.log('submitted');
+            });
+            document.getElementById("checkfocus").addEventListener("focus",function(){
+                document.getElementById("checkfocus").style.backgroundColor = "aqua"; 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="#" id="formsubmit">
+        <label for="">Name
+            <input id="checkfocus" type="text">
+        </label>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

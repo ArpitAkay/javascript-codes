@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        function changebgcolor(e){
+            e.target.style.backgroundColor = "red";
+            e.target.style.border = "none";
+        };
+        window.addEventListener("load",function(){
+            document.getElementById("firstbutton").addEventListener("click",changebgcolor);
+            document.getElementById("secondbutton").addEventListener("click",changebgcolor);
+        });
+    </script>
+</head>
+<body>
+    <button id="firstbutton">First Button</button>
+    <button id="secondbutton">Second Button</button>
+</body>
+</html>

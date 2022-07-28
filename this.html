@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+
+        // console.log(this);
+
+        // function dothis(){
+        //     console.log(this);
+        // };
+        // dothis();
+
+
+
+
+        // class human{
+            
+        // }
+        // let arpit = new human();
+        // console.log(arpit);
+
+
+
+
+        // function human(){
+        //     console.log(this);
+        // };
+
+        // let arpit = new human();
+
+
+
+        // class human{
+        //     constructor(){
+        //         console.log(this);
+        //     }
+        // }
+        // let arpit = new human();
+
+
+
+
+        // function human(name){
+        //     this.name = name;
+        //     this.walk = function(){
+        //         console.log(this.name + " is walking");
+        //     };
+        // };
+
+        // let abc = new human("arpit");
+        // abc.walk();
+
+
+        function human(name){
+            this.name = name;
+        };
+        human.prototype.walk = function(){              //instead of this you can use prototype.
+                console.log(this.name + " is walking");
+            };
+
+        let abc = new human("arpit");
+        abc.walk();
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

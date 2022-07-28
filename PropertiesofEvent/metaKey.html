@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        function funcmetaKey(e){
+            if(e.metaKey){
+                document.getElementById("print").innerHTML = "It is a metaKey";
+            }
+            else{
+                document.getElementById("print").innerHTML = "It is not a metaKey";
+            };
+        };
+        window.addEventListener("load",function(){
+            document.getElementById("checkmetaKey").addEventListener("keydown",funcmetaKey)
+        });
+    </script>
+</head>
+<body>
+    <input id="checkmetaKey" type="text">
+    <p id="print"></p>
+</body>
+</html>
