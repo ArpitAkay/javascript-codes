@@ -1,10 +1,14 @@
 window.addEventListener("load", function () {
-    let form = this.document.getElementById("new-form");
-    let input = this.document.getElementById("new-form-input");
-    let tasks = this.document.getElementById("tasks")
+    let form = document.getElementById("new-form");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        if (input.value == "") {
+        let input = document.getElementById("new-form-input").value;
+        document.getElementById("new-form-input").value = "";
+        let tasks = document.getElementById("tasks")
+        console.log(input);
+        input = input.trim();
+        console.log(input);
+        if (!input) {
             alert("Please Enter Task");
         } else {
             let box = document.createElement("div");
@@ -17,8 +21,7 @@ window.addEventListener("load", function () {
             box_content_input.setAttribute("type", "text");
             box_content_input.setAttribute("readonly", "readonly");
             box_content_input.classList.add("left-input-btn");
-            box_content_input.setAttribute("value",input.value);
-            input.value = "";
+            box_content_input.setAttribute("value",input);
             box_content.appendChild(box_content_input);
 
 
