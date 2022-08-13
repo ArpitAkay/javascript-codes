@@ -43,11 +43,10 @@
                         input.setAttribute("readonly","readonly");
                         btn_edit.innerText = "Edit";
                     }
-
+                    });
                     btn_delete.addEventListener("click",function(){
                         task.removeChild(container);
                     });
-                });
                 }
                 else{
                     alert("Please Enter Task To Do");
