@@ -1,22 +1,28 @@
 <!-- View File -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Todo-List</h1>
+    <form method="POST" action="/addTodo">
+        <input type="text" name="todo">
+        <input type="submit" value="Add">
+    </form>
     <ul>
         <% for(var i = 0; i < task.length; i++){ %>
         <li><%= task[i].caption %></li>
         <% } %>
     </ul>
-    <form method="POST" action="/addTodo">
-        <input type="text" name="todo">
-        <input type="submit" value="Add">
-    </form>
+    <% if(flag){%>
+        <span>Please Enter a Todo!</span>
+    <%}%>
 </body>
+
 </html>

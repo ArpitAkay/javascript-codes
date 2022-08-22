@@ -12,7 +12,7 @@
                 event.preventDefault();
                 let inputValue = document.getElementById("inputtask").value;
                 document.getElementById("inputtask").value = "";
-                inputValue = inputValue.trim();
+                inputValue = inputValue.trim();     //removes whitespace from both sides of a string
                 // console.log(inputValue);
                 if (inputValue) {
                     let container = document.createElement("div");

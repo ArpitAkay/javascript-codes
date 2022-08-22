@@ -1,18 +1,22 @@
 let form = document.getElementById("new-form");
-let ls = localStorage.getItem("todo");      //todo is the name of local storage and ls is storing the whole data in the form of string.
+let ls = localStorage.getItem("todo");      //todo is the name of local storage and ls is storing the whole data in the form of string. ls = null in starting.
 console.log(ls)
 let todo = ls ? JSON.parse(ls) :[];     //parse converts the string into JavaScript object i.e data becomes a JavaScript object. Here the object is todo.
+console.log(todo);
 
 form.addEventListener("submit",function(event){
     event.preventDefault();
     let inputValue = document.getElementById("new-form-input").value;
     console.log(inputValue);
-    if(inputValue == ""){
+    inputValue = inputValue.trim();
+    if(!inputValue){
         return alert("Please enter the task");
-    };
-    todo.push(inputValue);
-    localStorage.setItem("todo",JSON.stringify(todo));      //Stringify converts object/Array etc into string.
-    location.reload();
+    }
+    else{
+        todo.push(inputValue);
+        localStorage.setItem("todo",JSON.stringify(todo));      //Stringify converts object/Array etc into string.
+        location.reload();
+    }
 });
 todo.map((data,index) =>{       //.map is pure array m iterate krenge.
     document.getElementById("tasks").innerHTML += `
@@ -22,9 +26,9 @@ todo.map((data,index) =>{       //.map is pure array m iterate krenge.
         </div>
         <div class="right">
             <input type="checkbox"           id="completed${index}" onclick="complete(${index})"/>
-            <button class="right-btn-edit"   id="edit${index}" onclick="edit(${index})">Edit</button>
-            <button class="right-btn-edit"   id="save${index}" style="display:none" onclick="save(${index})">Save</button>
-            <button class="right-btn-delete" id="right-btn-delete" onclick="del(${index})">Delete</button>
+            <button class="right-btn-edit"   id="edit${index}"      onclick="edit(${index})">Edit</button>
+            <button class="right-btn-edit"   id="save${index}"      onclick="save(${index}style="display:none")">Save</button>
+            <button class="right-btn-delete" id="right-btn-delete"  onclick="del(${index})">Delete</button>
         </div>
     </div>
     `;
@@ -51,7 +55,8 @@ function edit(e){
 function save(e){
     let text = document.getElementById("text"+e).value;
     console.log(text);
-    if(text == ""){
+    text = text.trim();
+    if(!text){
         alert("Please enter some task");
     }
     else{
